@@ -1,6 +1,6 @@
 package pl.devsmentoring.java.Module4;
 
-public class Exercise9 {
+public class Exercise09 {
 
     public static void main(String[] args) {
         //N={1,2,3,4,5,6,...}

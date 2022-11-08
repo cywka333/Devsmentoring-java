@@ -2,7 +2,7 @@ package pl.devsmentoring.java.Module4;
 
 import java.util.Scanner;
 
-public class Exercise3 {
+public class Exercise03 {
     public static void exec_3()
     { // Pętla for
         Scanner scanner = new Scanner(System.in);

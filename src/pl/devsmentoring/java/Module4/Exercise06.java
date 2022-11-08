@@ -2,7 +2,7 @@ package pl.devsmentoring.java.Module4;
 
 import java.util.Scanner;
 
-public class Exercise6 {
+public class Exercise06 {
 
     public static void exec_6(){
         Scanner scanner = new Scanner(System.in);

@@ -1,6 +1,6 @@
 package pl.devsmentoring.java.Module4;
 
-public class Exercise4 {
+public class Exercise04 {
     public static void exec_4(){
         // FOR LOOP
         int y = 50;
