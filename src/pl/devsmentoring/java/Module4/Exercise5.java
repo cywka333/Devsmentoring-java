@@ -1,0 +1,13 @@
+package pl.devsmentoring.java.Module4;
+
+public class Exercise5 {
+
+    public static void exec_5(){
+        // FOR LOOP
+        int y = 100;
+        for(int i = 0; i <= y; i+=5){
+            System.out.println(i);
+        }
+
+    }
+}
