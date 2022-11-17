@@ -14,22 +14,19 @@ public class Exercise13 {
 // utworzonej list wraz z informacją, jaki jest jej pierwszy, ostatni i środkowy element.
     public static void main(String[] args) {
 
-        System.out.println("Please enter any word: ");
-        Scanner userWord = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
         List<String> newList = new ArrayList<>();
-        newList.add(userWord.nextLine());
 
-        for (int i = 0; i < newList.size(); i++) {
-            if (newList.contains("STOP")) {
-                System.out.println("Size of newList is: " + newList.size());
-                System.out.println("First element of newList is: " + newList.get(0));
-                System.out.println("Last element is: " + newList.get(i));
-                System.out.println("Middle element is: " + newList.get(i / 2));
-            } else {
-                System.out.println("Please enter new word: " + "\n If you want to stop, enter: STOP");
-                newList.add(userWord.nextLine());
-            }
-        }
+        do {
+            System.out.println("Please enter any word: ");
+            newList.add(scanner.nextLine());
+
+        } while (!newList.contains("STOP"));
+
+        System.out.println("Size of newList is: " + newList.size());
+        System.out.println("First element of newList is: " + newList.get(0));
+        System.out.println("Last element is: " + newList.get(newList.size() - 1));
+        System.out.println("Middle element is: " + newList.get((newList.size() / 2) - 1));
     }
 }

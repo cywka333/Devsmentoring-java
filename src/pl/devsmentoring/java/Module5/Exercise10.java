@@ -13,11 +13,9 @@ public class Exercise10 {
         for (int j = 0; j < newTab.length; j++) {
             for (int k = 0; k < newTab[k].length; k++) {
                 newTab[j][k] = (int)Math.pow(j + 1, k + 1);
-                System.out.print("[" + j + "]" + "[" + k + "]" + " = " + newTab[j][k] + "   ");
-                System.out.print("    ");
+                System.out.print("[" + j + "] [" + k + "] = " + newTab[j][k] + "    ");
             }
             System.out.println(" ");
         }
-
     }
 }

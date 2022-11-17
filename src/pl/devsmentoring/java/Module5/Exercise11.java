@@ -21,10 +21,10 @@ public class Exercise11 {
         List<String> names = new ArrayList<>(Arrays.stream(numbers2D).flatMap(Arrays::stream).toList());
 
         for (int i = 0; i < names.size(); i++) {
-            if (names.contains("Unknown")) {
-                names.remove("Unknown");
+            if (names.get(i).equalsIgnoreCase("Unknown")) {
+                continue;
             }
+            System.out.println(names.get(i));
         }
-        System.out.println(names);
     }
 }
