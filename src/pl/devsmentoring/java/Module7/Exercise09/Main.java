@@ -8,7 +8,6 @@ public class Main {
 
         deck.shuffle();
         System.out.println("Shuffled deck: " + deck);
-
         var dealtCard = deck.drawLast();
 
         System.out.println("Removed card: " + dealtCard);

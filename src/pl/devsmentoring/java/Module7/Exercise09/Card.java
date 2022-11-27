@@ -3,6 +3,7 @@ package pl.devsmentoring.java.Module7.Exercise09;
 public class Card {
     private final Suit suit;
     private final Rank rank;
+
     public Card(Suit suit, Rank rank) {
         this.suit = suit;
         this.rank = rank;

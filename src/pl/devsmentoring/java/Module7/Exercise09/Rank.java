@@ -14,7 +14,6 @@ public enum Rank {
     QUEEN(10, "Q"),
     KING(10, "K"),
     ACE(11, "A");
-
     private final int value;
     private final String display;
 
