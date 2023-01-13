@@ -15,24 +15,24 @@ public enum Rank {
     KING(10, "K"),
     ACE(11, "A");
     private final int value;
-    private final String display;
+    private final String symbol;
 
-    Rank(int value, String display) {
+    Rank(int value, String symbol) {
         this.value = value;
-        this.display = display;
+        this.symbol = symbol;
     }
 
     public int getValue() {
         return value;
     }
 
-    public String getDisplay() {
-        return display;
+    public String getSymbol() {
+        return symbol;
     }
 
     @Override
     public String toString() {
-        return display;
+        return symbol;
     }
 }
 
