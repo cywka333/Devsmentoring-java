@@ -7,6 +7,9 @@ import java.util.Scanner;
 public class Exercise17 {
     public static void main(String[] args) {
 
+        Scanner scanner = new Scanner(System.in);
+        boolean userStop = false;
+
         Map<String, String> playList = new HashMap<>();
         playList.put("The Sensual World", "Kate Bush");
         playList.put("Shaday", "Ofra Haze");
@@ -14,24 +17,22 @@ public class Exercise17 {
         playList.put("Aion", "Dead Can Dance");
         playList.put("Invisible Touch", "Genesis");
 
-        // Printing all names of albums (keys) on console.
         for (String key : playList.keySet()) {
             System.out.println(key);
         }
 
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Please enter a name of album. I will try to tell you who the author is.");
-
-        // I check if condition userChoice is true. If it is true, program prints name of album + author (key). If not
-        // it asks for another try.
-        for (int i = 0; i <= i + 1; i++) {
-            String userChoice = scanner.nextLine();
-            if (playList.containsKey(userChoice)) {
-                System.out.println("Author of album: " + userChoice + " is: " + playList.get(userChoice));
-            }else if (!playList.containsKey(userChoice)){
-                System.out.println("No data");
-                System.out.println("Please enter a name of album. I will try to tell you who the author is.");
-            }
+        for (HashMap.Entry<String, String> authorChecker : playList.entrySet()){
+            do {
+                System.out.println("Please give me the name of album. I will tell you who is the author.");
+                String userInput = scanner.nextLine();
+                if (playList.containsKey(userInput)){
+                    System.out.println("Author of album: " + userInput + " is: " + playList.get(userInput));
+                    userStop = true;
+                }else {
+                    System.out.println("You typed wrong name of album. Please try again.");
+                }
+            }while(!userStop);
+            break;
         }
     }
 }

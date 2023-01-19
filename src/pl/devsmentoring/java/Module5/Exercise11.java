@@ -6,14 +6,6 @@ import java.util.List;
 
 public class Exercise11 {
 
-    //Z podanej tablicy:
-    //
-    //String[][] numbers2D = {{"John", "Jasper"}, {"Casper", "Jonathan"},
-    //{"Unknown", "Unknown"}, {"Alice", "Bob"}, {"Stanley", "Unknown"}};
-    //
-    //
-    //Wyświetl tylko te podtablice składowe, które nie mają w sobie wartości “Unknown”.
-    // Wykorzystaj metodę .contains().
     public static void main(String[] args) {
         String[][] numbers2D = {{"John", "Jasper"}, {"Casper", "Jonathan"},
                 {"Unknown", "Unknown"}, {"Alice", "Bob"}, {"Stanley", "Unknown"}};
