@@ -5,46 +5,28 @@ import java.util.*;
 public class Exercise20 {
     public static void main(String[] args) {
 
-        List<String> colourList = Arrays.asList("zielony", "czerwony", "niebieski", "czarny",
+        int colorCounter = 1;
+
+        List<String> colourList = new ArrayList<>(Arrays.asList("zielony", "czerwony", "niebieski", "czarny",
                 "fioletowy", "granatowy", "niebieski",
                 "czarny", "czarny", "zielony", "cytrynowy", "granatowy",
-                "niebieski", "indygo", "zielony", "czerwony");
+                "niebieski", "indygo", "zielony", "czerwony"));
 
         System.out.println("Original length of our colour list was: " + colourList.size());
 
+        Set<String> colorSet = new HashSet<>(colourList);
+        System.out.println("Numbers of different colours in our list: " + colorSet.size());
 
-        Map<String, Integer> colorCounts = new HashMap<>();
-        for (String color : colourList) {
-            colorCounts.putIfAbsent(color, 0);
-            colorCounts.put(color, colorCounts.get(color) + 1);
+        for (String colorDisplay : colorSet){
+            System.out.println("Color number " + colorCounter + " is: " + colorDisplay);
+            ++colorCounter;
         }
 
-        for (Map.Entry<String, Integer> entry : colorCounts.entrySet()) {
-            System.out.println("Colour numbers of occurrences: " + entry.getKey() + " - " + entry.getValue());
-        }
+        colorSet.add("purpurowy");
+        System.out.println("After adding colour purpurowy set looks like: " + colorSet.toString());
 
-
-        Set<String> colourAsValues = new HashSet<>(colourList);
-        System.out.println("In the list we have: " + colourAsValues.size() + " different colours.\n");
-
-        for (String printingColours : colourAsValues) {
-            System.out.println(printingColours);
-        }
-
-        System.out.println(" ");
-
-        colourAsValues.add("purpurowy");
-        for (String printingColours : colourAsValues) {
-            System.out.print(printingColours + "; ");
-        }
-
-        System.out.println(" ");
-
-        colourAsValues.remove("niebieski");
-        for (String printingColours : colourAsValues) {
-            System.out.print(printingColours + "; ");
-        }
+        colorSet.remove("niebieski");
+        System.out.println("I removed colour niebieski. Now it looks like: " + colorSet.toString());
 
     }
-
 }
