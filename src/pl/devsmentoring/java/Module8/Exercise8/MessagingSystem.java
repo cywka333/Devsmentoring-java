@@ -1,19 +1,13 @@
 package pl.devsmentoring.java.Module8.Exercise8;
 
-public class MessagingSystem {
-    public static void main(String[] args) {
+public abstract class MessagingSystem {
 
-        Info.showInfo();
-        Info.showInfo();
-        Info.showInfo();
-        Info.showInfo();
-        Info.showInfo();
-
-        Warning.showWarning();
-        Warning.showWarning();
-        Warning.showWarning();
-        Warning.showWarning();
-        Warning.showWarning();
-
+    protected int counter = 0;
+    abstract void Message();
+     protected void execute(){
+        Message();
+        counter++;
     }
+
+
 }

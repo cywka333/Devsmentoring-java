@@ -10,11 +10,17 @@ public class Student extends Person {
         this.averageMark = averageMark;
     }
 
+    public Student(String name, String phoneNumber, String emailAddress, int studentNumber, int averageMark) {
+        super(name, phoneNumber, emailAddress);
+        this.studentNumber = studentNumber;
+        this.averageMark = averageMark;
+    }
+
     private void isEligibleToEnrollGetSeminarTokens() {
         if (this.averageMark >= 3) {
             System.out.println("Student is eligible to enroll and get seminar tokens!");
         }else {
-            System.out.println("Student is not eligible to enroll and get seminar tokens! :(");
+            System.out.println("Student is not eligible to enroll and get seminar tokens! Average mark is too low: " + this.averageMark);
         }
     }
 
@@ -25,6 +31,7 @@ public class Student extends Person {
     }
 
     public void execute(){
+        System.out.println("Student name: " + this.name);
         isEligibleToEnrollGetSeminarTokens();
         purchaseParkingPass();
     }
