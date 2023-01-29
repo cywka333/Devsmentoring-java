@@ -17,8 +17,8 @@ public class Stock extends Securities {
     }
 
     private void valueDown(){
-        tenPercent = value.multiply(new BigDecimal("0.1"));
-        value = value.multiply(new BigDecimal("-0.1"));
+        tenPercent = getValue().multiply(new BigDecimal("-0.1"));
+        value = value.add(tenPercent);
     }
 
     @Override

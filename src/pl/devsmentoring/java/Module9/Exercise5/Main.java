@@ -21,7 +21,7 @@ public class Main {
 
         SecuritiesPortfolio portfolio = new SecuritiesPortfolio(securitiesList);
 
-        for (int i = 1; i <= 10; i++) {
+        for (int i = 1; i <= 5; i++) {
             System.out.println("Step " + i + ":");
             portfolio.step();
             System.out.println("Value of whole portfolio is: " + portfolio.getTotalValue());
