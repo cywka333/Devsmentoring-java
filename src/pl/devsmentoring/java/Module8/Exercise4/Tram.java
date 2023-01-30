@@ -7,10 +7,6 @@ public class Tram extends Vehicle {
         return wagonNo;
     }
 
-    public void setWagonNo(int wagonNo) {
-        this.wagonNo = wagonNo;
-    }
-
     private final String vehicleType = "Tram";
 
 

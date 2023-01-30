@@ -1,21 +1,29 @@
 package pl.devsmentoring.java.Module8.Exercise4;
 
-public class BusDepot {
-    public static void main(String[] args) {
-        final String busDepotName = "Bus Depot";
-        int fuelMonthlyUsage;
-        Bus bus1 = new Bus(200, 2, 5000);
-        Bus bus2 =  new Bus(230, 3, 2000);
-        Bus bus3 = new Bus(222, 4, 3000);
 
-        System.out.println("Welcome to " + busDepotName);
-        bus1.introduce();
-        bus2.introduce();
-        bus3.introduce();
+import java.util.ArrayList;
+import java.util.List;
 
-        fuelMonthlyUsage = bus1.getFuelMonthlyUsage() + bus2.getFuelMonthlyUsage() + bus3.getFuelMonthlyUsage();
+public class BusDepot extends Depot {
+    int busesFuelMonthlyUsage;
+    public BusDepot(String name) {
+        super(name);
+    }
+    private List<Bus> buses = new ArrayList<>();
 
-        System.out.println("Our all monthly usage of fuel is: " + fuelMonthlyUsage);
+    public void addBus(Bus bus) {
+        buses.add(bus);
+    }
+
+    public List<Bus> getBuses() {
+        return buses;
+    }
+
+    public int sumMonthlyUsage() {
+        for (Bus bus : buses) {
+            busesFuelMonthlyUsage += bus.getFuelMonthlyUsage();
+        }
+        return busesFuelMonthlyUsage;
     }
 
 }

@@ -13,4 +13,13 @@ public class Vehicle {
         System.out.println("My number is: " + this.vehicleNumber);
     }
 
+    public int getVelocityMax() {
+        return velocityMax;
+    }
+
+
+    public int getVehicleNumber() {
+        return vehicleNumber;
+    }
+
 }

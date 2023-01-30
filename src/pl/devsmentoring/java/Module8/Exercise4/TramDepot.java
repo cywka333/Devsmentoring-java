@@ -1,18 +1,37 @@
 package pl.devsmentoring.java.Module8.Exercise4;
 
-public class TramDepot {
+import java.util.ArrayList;
+import java.util.List;
 
-    public static void main(String[] args) {
-        final String tramDepotName = "Tram Depot!";
-        int allWagonNo;
-        Tram tram1 = new Tram(100,3,4);
-        Tram tram2 = new Tram(130, 5, 1);
+public class TramDepot extends Depot {
 
-        allWagonNo = tram1.getWagonNo() + tram2.getWagonNo();
-        System.out.println("Welcome to " + tramDepotName);
-        tram1.introduce();
-        tram2.introduce();
-        System.out.println("We have here " + allWagonNo + " wagons");
+    int allWagonNo;
 
+    public TramDepot(String name) {
+        super(name);
     }
+
+    private List<Tram> trams = new ArrayList<>();
+
+    public void addTram(Tram tram) {
+        if (tram.getWagonNo() >= 1 && tram.getWagonNo() <= 4) {
+            trams.add(tram);
+        }else {
+            System.out.println("Tram is too long or too short for tram depot. I can not add it. Create tram with 1-3 wagons.\n");
+        }
+    }
+
+    public List<Tram> getTrams() {
+        return trams;
+    }
+
+    public int sumWagonNo() {
+        for (Tram tram : trams) {
+            allWagonNo += tram.getWagonNo();
+        }
+        return allWagonNo;
+    }
+
 }
+
+
