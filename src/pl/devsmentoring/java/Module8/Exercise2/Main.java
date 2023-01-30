@@ -8,7 +8,21 @@ public class Main {
 
         System.out.println("Please give me length of the square");
         Square square = new Square(scanner.nextInt());
+        Square square1 = new Square(2);
 
-        square.countingArea();
+        square.areaDisplay();
+
+        System.out.println("");
+
+        square1.areaDisplay();
+
+        Shape shape = new Shape(3);
+        Shape shape1 = new Shape(2);
+
+        shape.areaDisplay();
+        shape1.areaDisplay();
+
+
+
     }
 }
