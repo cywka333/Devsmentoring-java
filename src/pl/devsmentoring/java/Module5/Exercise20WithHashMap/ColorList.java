@@ -22,6 +22,10 @@ public class ColorList {
     public void displayCounts() {
         System.out.println("Count of colors in the original list: " + colorList.size());
         System.out.println("Count of unique colors in the original list: " + colorMap.size());
+        System.out.println("");
+        for (String key: colorMap.keySet()){
+            System.out.println("Color type: " + key + " - number of occurrences: " +colorMap.get(key));
+        }
     }
 
     public void displayColors() {

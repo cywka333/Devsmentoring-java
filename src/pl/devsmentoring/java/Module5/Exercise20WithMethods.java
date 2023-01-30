@@ -10,22 +10,15 @@ public class Exercise20WithMethods {
                 "czarny", "czarny", "zielony", "cytrynowy", "granatowy",
                 "niebieski", "indygo", "zielony", "czerwony"));
 
-        colourCopy(colourList);
+        System.out.println("Orginal list: " + colourList.toString());
+
+        HashSet<String> colourSet = new HashSet<>(colourList);
         System.out.println("In set we have " + colourSet.size() + " different colors.\n");
         displayColorsInNewLines(colourSet);
         System.out.println("");
-
         colorAdd(colourSet);
         System.out.println("");
         colorRemove(colourSet);
-    }
-
-    private static HashSet<String> colourSet = new HashSet<>();
-
-    private static void colourCopy(List<String> colourList){
-        for (String colour : colourList){
-            colourSet.add(colour);
-        }
     }
 
     private static void displayColorsInNewLines(HashSet<String>colourSet){
