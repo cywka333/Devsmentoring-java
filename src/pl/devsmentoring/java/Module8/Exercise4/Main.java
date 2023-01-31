@@ -21,37 +21,40 @@ public class Main {
         tram2.introduce();
         tram4.introduce();
 
-        BusDepot busDepot = new BusDepot("Bus Depot");
-        TramDepot tramDepot = new TramDepot("Tram Depot");
+        BusDepot busDepot = new BusDepot();
+        TramDepot tramDepot = new TramDepot();
 
-        busDepot.addBus(bus1);
-        busDepot.addBus(bus2);
-        busDepot.addBus(bus3);
+        busDepot.addVehicle(bus1);
+        busDepot.addVehicle(bus2);
+        busDepot.addVehicle(bus3);
 
-        tramDepot.addTram(tram1);
-        tramDepot.addTram(tram2);
-        tramDepot.addTram(tram3);
-        tramDepot.addTram(tram4);
+        tramDepot.addVehicle(tram1);
+        tramDepot.addVehicle(tram2);
+        tramDepot.addVehicle(tram3);
+        tramDepot.addVehicle(tram4);
 
-        List<Bus> buses = busDepot.getBuses();
+        List<Vehicle> buses = busDepot.getVehicleList();
+
         System.out.println("Buses in " + busDepot.getName() + ":");
-        for (Bus bus : buses) {
+        for (Vehicle vehicle : buses) {
+            Bus bus = (Bus) vehicle;
             System.out.println("Vehicle number: " + bus.getVehicleNumber());
             System.out.println("Velocity mas: " + bus.getVelocityMax());
             System.out.println("Monthly fuel usage: " + bus.getFuelMonthlyUsage());
         }
 
-        System.out.println("Summary of fuel monthly usage of all buses is: " + busDepot.sumMonthlyUsage());
+        System.out.println("Summary of fuel monthly usage of all buses is: " + busDepot.getBusesFuelMonthlyUsage());
 
-        List<Tram> trams = tramDepot.getTrams();
+        List<Vehicle> trams = tramDepot.getVehicleList();
         System.out.println("\nTrams in " + tramDepot.getName() + ":");
-        for (Tram tram : trams) {
+        for (Vehicle vehicle : trams) {
+            Tram tram = (Tram) vehicle;
             System.out.println("Number: " + tram.getVehicleNumber());
             System.out.println("Wagons number: " + tram.getWagonNo());
             System.out.println("Velocity max: " + tram.getVelocityMax());
         }
 
-        System.out.println("Number of all wagons in tram depot : " + tramDepot.sumWagonNo());
+        System.out.println("Number of all wagons in tram depot : " + tramDepot.getAllWagonNo());
 
     }
 }

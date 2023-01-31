@@ -2,13 +2,20 @@ package pl.devsmentoring.java.Module8.Exercise2;
 
 public class Shape {
     protected int length;
+    protected int height;
 
-    public Shape(int length) {
+    public Shape(){
+        this.length = 0;
+        this.height = 0;
+    }
+
+    public Shape(int length, int height) {
         this.length = length;
+        this.height = height;
     }
 
     protected int calculateArea() {
-        return 0;
+        return length*height;
     }
 
     protected void areaDisplay(){

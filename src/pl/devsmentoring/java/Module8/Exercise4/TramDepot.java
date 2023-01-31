@@ -7,31 +7,29 @@ public class TramDepot extends Depot {
 
     int allWagonNo;
 
-    public TramDepot(String name) {
-        super(name);
+    public TramDepot() {
+        this.name = "Tram Depot";
     }
 
-    private List<Tram> trams = new ArrayList<>();
-
-    public void addTram(Tram tram) {
-        if (tram.getWagonNo() >= 1 && tram.getWagonNo() <= 4) {
-            trams.add(tram);
-        }else {
-            System.out.println("Tram is too long or too short for tram depot. I can not add it. Create tram with 1-3 wagons.\n");
-        }
+    private void addWagonNumbers(int wagonNo) {
+        this.allWagonNo += wagonNo;
     }
 
-    public List<Tram> getTrams() {
-        return trams;
-    }
-
-    public int sumWagonNo() {
-        for (Tram tram : trams) {
-            allWagonNo += tram.getWagonNo();
-        }
+    public int getAllWagonNo() {
         return allWagonNo;
     }
 
+    @Override
+    public void addVehicle(Vehicle vehicle) {
+        Tram tram = (Tram) vehicle;
+        this.vehicleList.add(tram);
+        addWagonNumbers(tram.getWagonNo());
+    }
+
+    @Override
+    public List<Vehicle> getVehicleList() {
+        return super.getVehicleList();
+    }
 }
 
 

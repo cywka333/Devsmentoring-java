@@ -6,24 +6,22 @@ import java.util.List;
 
 public class BusDepot extends Depot {
     int busesFuelMonthlyUsage;
-    public BusDepot(String name) {
-        super(name);
-    }
-    private List<Bus> buses = new ArrayList<>();
-
-    public void addBus(Bus bus) {
-        buses.add(bus);
+    public BusDepot() {
+        this.name = "Bus Depot";
     }
 
-    public List<Bus> getBuses() {
-        return buses;
+    private void addFuelUsage(int gasUsage){
+        busesFuelMonthlyUsage += gasUsage;
     }
 
-    public int sumMonthlyUsage() {
-        for (Bus bus : buses) {
-            busesFuelMonthlyUsage += bus.getFuelMonthlyUsage();
-        }
+    @Override
+    public void addVehicle(Vehicle vehicle) {
+        Bus bus = (Bus) vehicle;
+        this.vehicleList.add(bus);
+        addFuelUsage(bus.getFuelMonthlyUsage());
+    }
+
+    public int getBusesFuelMonthlyUsage() {
         return busesFuelMonthlyUsage;
     }
-
 }

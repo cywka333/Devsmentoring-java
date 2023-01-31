@@ -13,6 +13,5 @@ public class Exercise8 {
         Warning.showWarning();
         Warning.showWarning();
         Warning.showWarning();
-
     }
 }

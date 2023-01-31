@@ -2,13 +2,11 @@ package pl.devsmentoring.java.Module8.Exercise2;
 
 public class Square extends Shape {
 
-    public Square(int length) {
-        super(length);
+    public Square() {
     }
 
-    @Override
-    protected int calculateArea() {
-        return length*length;
+    public Square(int length) {
+        super(length, length);
     }
 
     @Override

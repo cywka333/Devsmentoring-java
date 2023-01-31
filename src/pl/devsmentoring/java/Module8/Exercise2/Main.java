@@ -16,12 +16,11 @@ public class Main {
 
         square1.areaDisplay();
 
-        Shape shape = new Shape(3);
-        Shape shape1 = new Shape(2);
+        Shape shape = new Shape(3, 3);
+        Shape shape1 = new Shape();
 
         shape.areaDisplay();
         shape1.areaDisplay();
-
 
 
     }
