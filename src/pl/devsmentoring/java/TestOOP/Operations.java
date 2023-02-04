@@ -2,11 +2,12 @@ package pl.devsmentoring.java.TestOOP;
 
 public interface Operations {
 
-    int pourWater();
+    double pourWater(double waterAdd);
 
-    int pourOutWater();
+    double pourOutWater(double waterOut);
 
     int transferWater();
+
 
 
 }

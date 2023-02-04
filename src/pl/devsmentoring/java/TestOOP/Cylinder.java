@@ -10,7 +10,8 @@ public class Cylinder extends Tank implements Operations{
 
     @Override
     public double calculateVolume() {
-        return pi*(r*r)*height;
+        this.maxValue = pi*(r*r)*height;
+        return maxValue;
     }
 
     @Override
@@ -19,12 +20,12 @@ public class Cylinder extends Tank implements Operations{
     }
 
     @Override
-    public int pourWater() {
+    public double pourWater(double waterAdd) {
         return 0;
     }
 
     @Override
-    public int pourOutWater() {
+    public double pourOutWater(double waterOut) {
         return 0;
     }
 

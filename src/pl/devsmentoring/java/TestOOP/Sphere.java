@@ -10,22 +10,54 @@ public class Sphere extends Tank implements Operations {
 
     @Override
     public double calculateVolume() {
-        return (4.0/3.0)*pi*(r*r*r);
+        this.maxValue = (4.0/3.0)*pi*(r*r*r);
+        return maxValue;
     }
 
     @Override
-    protected void displayVolume() {
-        super.displayVolume();
+    public double pourWater(double waterAdd) {
+        double reamingFreeVolume = this.maxValue - waterAdd;
+        if (this.maxValue == calculateVolume()){
+            this.maxValue=reamingFreeVolume;
+            this.reamingVolume = reamingFreeVolume;
+            System.out.println("Your " + this.name + " was empty. You added: " + waterAdd + " of water. You have: " + reamingFreeVolume + " free volume.");
+        }else if (reamingFreeVolume > 0 && waterAdd >= 0){
+            this.maxValue=reamingFreeVolume;
+            this.reamingVolume = reamingFreeVolume;
+            System.out.println("You added: " + waterAdd + " of water.");
+            System.out.println("Reaming free value of " + this.name + " is: " + reamingFreeVolume);
+        } else if (reamingFreeVolume > 0 && waterAdd < 0){
+            reamingFreeVolume+=waterAdd;
+            this.maxValue=reamingFreeVolume;
+            System.out.println("You can not add negative value. You can pour: " + reamingFreeVolume);
+        }
+        else {
+            reamingFreeVolume-=waterAdd;
+            this.maxValue=reamingFreeVolume;
+            System.out.println("You can't pour so much water. You pour over :" + reamingFreeVolume);
+        }
+        return reamingFreeVolume;
     }
 
     @Override
-    public int pourWater() {
-        return 0;
-    }
-
-    @Override
-    public int pourOutWater() {
-        return 0;
+    public double pourOutWater(double waterOut) {
+        double reamingTakenVolume = this.reamingVolume - waterOut;
+        if (this.maxValue == calculateVolume()){
+            this.maxValue=reamingTakenVolume;
+            System.out.println("Your " + this.name + "was empty. You added: " + waterOut + " of water. You have: " + reamingTakenVolume + " free volume.");
+        }else if (reamingTakenVolume > 0 && waterOut >= 0){
+            this.maxValue=reamingTakenVolume;
+            System.out.println("You added: " + waterOut + " of water.");
+            System.out.println("Reaming free value of " + this.name + " is: " + reamingTakenVolume);
+        } else if (reamingTakenVolume > 0 && waterOut < 0){
+            System.out.println("You can not add negative value.");
+            reamingTakenVolume-=waterOut;
+        }
+        else {
+            reamingTakenVolume+=waterOut;
+            System.out.println("You can't pour so much water. There is volume for: " + reamingTakenVolume);
+        }
+        return reamingTakenVolume;
     }
 
     @Override

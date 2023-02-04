@@ -6,7 +6,8 @@ abstract class Tank {
     protected int width = 1;
     protected int height = 1;
     protected int r = 1;
-
+    protected double maxValue;
+    protected double reamingVolume;
 
     // walec
     public Tank(String name, int height, int r) {
@@ -31,20 +32,21 @@ abstract class Tank {
 
     abstract double calculateVolume();
 
+    protected void waterLimit(){
+        System.out.println("Your water limit is: " + this.maxValue);
+    }
+
     protected void displayVolume(){
         if (length <= 0 || width <= 0 || height <= 0 || r <= 0)
         {
             System.out.println("It is impossible to create negative figure.");
         }
-        else if (name.equals("")){
-            System.out.println("Your tank does not have a name, but it hase volume: " + calculateVolume());
+        else if (this.name.equals("")){
+            System.out.println("Your tank does not have a name, but it has volume: " + calculateVolume());
         } else {
-            System.out.println("Volume of your: " + name + " is equal to: " + calculateVolume());
+            System.out.println("Volume of your: " + this.name + " is equal to: " + calculateVolume());
         }
     }
 
 }
-
-
-
 
