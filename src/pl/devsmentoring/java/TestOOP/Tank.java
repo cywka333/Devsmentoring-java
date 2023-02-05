@@ -48,5 +48,52 @@ abstract class Tank {
         }
     }
 
+    protected double pourWater(double waterAdd) {
+        double reamingFreeVolume = this.maxValue - waterAdd;
+        if (this.maxValue == calculateVolume()){
+            this.maxValue=reamingFreeVolume;
+            this.reamingVolume = reamingFreeVolume;
+            System.out.println("Your " + this.name + " was empty. You added: " + waterAdd + " of water. You have: " + reamingFreeVolume + " free volume.");
+        }else if (reamingFreeVolume > 0 && waterAdd >= 0){
+            this.maxValue=reamingFreeVolume;
+            this.reamingVolume = reamingFreeVolume;
+            System.out.println("You added: " + waterAdd + " of water.");
+            System.out.println("Reaming free value of " + this.name + " is: " + reamingFreeVolume);
+        } else if (reamingFreeVolume > 0 && waterAdd < 0){
+            reamingFreeVolume+=waterAdd;
+            this.maxValue=reamingFreeVolume;
+            System.out.println("You can not add negative value. You can pour: " + reamingFreeVolume);
+        } else {
+            System.out.println("Operation failed. You can't pour so much water. You pour over: " +-reamingFreeVolume);
+            reamingFreeVolume+=waterAdd;
+            this.maxValue=reamingFreeVolume;
+
+        }
+        return reamingFreeVolume;
+    }
+
+    protected double pourOutWater(double waterOut) {
+        double reamingToTakeVolume = this.reamingVolume + waterOut;
+        if (waterOut > reamingVolume){
+            reamingToTakeVolume-=waterOut;
+            System.out.println("You can not pour so much water! You can pour out max: " + reamingToTakeVolume);
+        } else if (waterOut < 0) {
+            reamingToTakeVolume -= waterOut;
+            System.out.println("Operation failed. You can not pour out negative number. Please write positive number.");
+            System.out.println("Reaming free value of " + this.name + " is: " + reamingToTakeVolume);
+            this.reamingVolume = reamingToTakeVolume;
+        }else if (reamingToTakeVolume < calculateVolume() && waterOut >=0){
+            System.out.println("You are pouring out water from: " + this.name + ". You taken: " + waterOut + " of water. You have: " + reamingToTakeVolume + " free volume now.");
+            this.reamingVolume = reamingToTakeVolume;
+        } else if (reamingToTakeVolume < calculateVolume() && waterOut >=0) {
+            System.out.println("Coś");
+        }
+        return reamingToTakeVolume;
+    }
+
+    public int transferWater(Tank tank) {
+        return 0;
+    }
+
 }
 

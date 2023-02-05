@@ -1,7 +1,6 @@
 package pl.devsmentoring.java.TestOOP;
 
-public class Cuboid extends Tank implements Operations {
-
+public class Cuboid extends Tank{
 
 
     public Cuboid(String name, int length, int width, int height) {
@@ -14,19 +13,4 @@ public class Cuboid extends Tank implements Operations {
         return maxValue;
     }
 
-
-    @Override
-    public double pourWater(double waterAdd) {
-        return 0;
-    }
-
-    @Override
-    public double pourOutWater(double waterOut) {
-        return 0;
-    }
-
-    @Override
-    public int transferWater() {
-        return 0;
-    }
 }

@@ -1,6 +1,6 @@
 package pl.devsmentoring.java.TestOOP;
 
-public class Cylinder extends Tank implements Operations{
+public class Cylinder extends Tank {
 
     double pi = 3.14;
 
@@ -10,27 +10,9 @@ public class Cylinder extends Tank implements Operations{
 
     @Override
     public double calculateVolume() {
-        this.maxValue = pi*(r*r)*height;
+        this.maxValue = pi * (r * r) * height;
         return maxValue;
     }
-
-    @Override
-    protected void displayVolume() {
-        super.displayVolume();
-    }
-
-    @Override
-    public double pourWater(double waterAdd) {
-        return 0;
-    }
-
-    @Override
-    public double pourOutWater(double waterOut) {
-        return 0;
-    }
-
-    @Override
-    public int transferWater() {
-        return 0;
-    }
 }
+
+
