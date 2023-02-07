@@ -1,18 +1,15 @@
 package pl.devsmentoring.java.TestOOP;
 
-public class Cylinder extends Tank {
+class Cylinder extends Tank{
+    private double radius;
+    private double height;
 
-    double pi = 3.14;
-
-    public Cylinder(String name, int height, int r) {
-        super(name, height, r);
+    public Cylinder(String name, double radius, double height) {
+        super(name, Math.PI * Math.pow(radius, 2) * height);
+        this.radius = radius;
+        this.height = height;
     }
 
-    @Override
-    public double calculateVolume() {
-        this.maxValue = pi * (r * r) * height;
-        return maxValue;
-    }
 }
 
 

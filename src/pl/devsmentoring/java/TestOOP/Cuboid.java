@@ -1,16 +1,16 @@
 package pl.devsmentoring.java.TestOOP;
 
-public class Cuboid extends Tank{
+class Cuboid extends Tank {
+    private double length;
+    private double width;
+    private double height;
 
-
-    public Cuboid(String name, int length, int width, int height) {
-        super(name, length, width, height);
-    }
-
-    @Override
-    public double calculateVolume() {
-        this.maxValue = length*width*height;
-        return maxValue;
+    public Cuboid(String name, double length, double width, double height) {
+        super(name, length * width * height);
+        this.length = length;
+        this.width = width;
+        this.height = height;
     }
 
 }
+

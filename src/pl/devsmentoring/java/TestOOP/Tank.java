@@ -1,99 +1,85 @@
 package pl.devsmentoring.java.TestOOP;
 
+import java.util.ArrayList;
+import java.util.List;
+
 abstract class Tank {
-    protected String name;
-    protected int length = 1;
-    protected int width = 1;
-    protected int height = 1;
-    protected int r = 1;
-    protected double maxValue;
-    protected double reamingVolume;
+    private String name;
+    private double capacity;
+    private double currentVolume;
 
-    // walec
-    public Tank(String name, int height, int r) {
+    public Tank(String name, double capacity) {
         this.name = name;
-        this.height = height;
-        this.r = r;
+        this.capacity = capacity;
+        this.currentVolume = 0;
     }
 
-    //kula
-    public Tank(String name, int r){
-        this.name = name;
-        this.r = r;
+    public String getName() {
+        return name;
     }
 
-    //prostopadłościan i szescian
-    public Tank(String name, int length, int width, int height) {
-        this.name = name;
-        this.length = length;
-        this.width = width;
-        this.height = height;
+    public double getCapacity() {
+        return capacity;
     }
 
-    abstract double calculateVolume();
-
-    protected void waterLimit(){
-        System.out.println("Your water limit is: " + this.maxValue);
+    public double getCurrentVolume() {
+        return currentVolume;
     }
 
-    protected void displayVolume(){
-        if (length <= 0 || width <= 0 || height <= 0 || r <= 0)
-        {
-            System.out.println("It is impossible to create negative figure.");
-        }
-        else if (this.name.equals("")){
-            System.out.println("Your tank does not have a name, but it has volume: " + calculateVolume());
+    public void pourWater(double volume) {
+        if (currentVolume + volume <= capacity) {
+            currentVolume += volume;
         } else {
-            System.out.println("Volume of your: " + this.name + " is equal to: " + calculateVolume());
+            System.out.println("Cannot pour water more than tank capacity");
         }
     }
 
-    protected double pourWater(double waterAdd) {
-        double reamingFreeVolume = this.maxValue - waterAdd;
-        if (this.maxValue == calculateVolume()){
-            this.maxValue=reamingFreeVolume;
-            this.reamingVolume = reamingFreeVolume;
-            System.out.println("Your " + this.name + " was empty. You added: " + waterAdd + " of water. You have: " + reamingFreeVolume + " free volume.");
-        }else if (reamingFreeVolume > 0 && waterAdd >= 0){
-            this.maxValue=reamingFreeVolume;
-            this.reamingVolume = reamingFreeVolume;
-            System.out.println("You added: " + waterAdd + " of water.");
-            System.out.println("Reaming free value of " + this.name + " is: " + reamingFreeVolume);
-        } else if (reamingFreeVolume > 0 && waterAdd < 0){
-            reamingFreeVolume+=waterAdd;
-            this.maxValue=reamingFreeVolume;
-            System.out.println("You can not add negative value. You can pour: " + reamingFreeVolume);
+    public void pourOutWater(double volume) {
+        if (currentVolume - volume >= 0) {
+            currentVolume -= volume;
         } else {
-            System.out.println("Operation failed. You can't pour so much water. You pour over: " +-reamingFreeVolume);
-            reamingFreeVolume+=waterAdd;
-            this.maxValue=reamingFreeVolume;
-
+            System.out.println("Cannot pour out more water than present in the tank");
         }
-        return reamingFreeVolume;
     }
 
-    protected double pourOutWater(double waterOut) {
-        double reamingToTakeVolume = this.reamingVolume + waterOut;
-        if (waterOut > reamingVolume){
-            reamingToTakeVolume-=waterOut;
-            System.out.println("You can not pour so much water! You can pour out max: " + reamingToTakeVolume);
-        } else if (waterOut < 0) {
-            reamingToTakeVolume -= waterOut;
-            System.out.println("Operation failed. You can not pour out negative number. Please write positive number.");
-            System.out.println("Reaming free value of " + this.name + " is: " + reamingToTakeVolume);
-            this.reamingVolume = reamingToTakeVolume;
-        }else if (reamingToTakeVolume < calculateVolume() && waterOut >=0){
-            System.out.println("You are pouring out water from: " + this.name + ". You taken: " + waterOut + " of water. You have: " + reamingToTakeVolume + " free volume now.");
-            this.reamingVolume = reamingToTakeVolume;
-        } else if (reamingToTakeVolume < calculateVolume() && waterOut >=0) {
-            System.out.println("Coś");
+    public void transferWater(Tank from, double volume) {
+        if (from.getCurrentVolume() >= volume) {
+            from.pourOutWater(volume);
+            pourWater(volume);
+        } else {
+            System.out.println("Cannot transfer water more than present in the source tank");
         }
-        return reamingToTakeVolume;
     }
 
-    public int transferWater(Tank tank) {
-        return 0;
+
+    public static Tank findTankWithMostWater(List<Tank> tanks) {
+        Tank tankWithMostWater = tanks.get(0);
+        for (Tank tank : tanks) {
+            if (tank.getCurrentVolume() > tankWithMostWater.getCurrentVolume()) {
+                tankWithMostWater = tank;
+            }
+        }
+        return tankWithMostWater;
+    }
+
+    public static Tank findTankWithMostWaterFilled(List<Tank> tanks) {
+        Tank tankWithMostWaterFilled = tanks.get(0);
+        for (Tank tank : tanks) {
+            if (tank.getCurrentVolume() / tank.getCapacity() > tankWithMostWaterFilled.getCurrentVolume() / tankWithMostWaterFilled.getCapacity()) {
+                tankWithMostWaterFilled = tank;
+            }
+        }
+        return tankWithMostWaterFilled;
+    }
+
+    public static List<String> findEmptyTanks(List<Tank> tanks) {
+        List<String> emptyTanks = new ArrayList<>();
+        for (Tank tank : tanks) {
+            if (tank.getCurrentVolume() == 0) {
+                emptyTanks.add(tank.getName());
+            }
+        }
+        return emptyTanks;
     }
 
 }
-
