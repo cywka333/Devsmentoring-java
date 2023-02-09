@@ -97,6 +97,7 @@ abstract class Tank  {
                 tankWithMostFailedOperations = entry.getKey();
             }
         }
+
         return tankWithMostFailedOperations;
     }
 
@@ -118,6 +119,40 @@ abstract class Tank  {
         return tankWithMostOperations;
     }
 
+    public static boolean checkState(String tankName) {
+        double calculatedVolume = 0;
+        Tank tank = null;
+        for (Tank t : tanks) {
+            if (t.getName().equals(tankName)) {
+                tank = t;
+                break;
+            }
+        }
+
+        if (tank == null) {
+            return false;
+        }
+
+        for (Event event : tank.eventsList) {
+            if (event.isOperationSuccessful()) {
+                switch (event.getOperationType()) {
+                    case "pourWater":
+                        calculatedVolume += event.getVolume();
+                        break;
+                    case "pourOutWater":
+                        calculatedVolume -= event.getVolume();
+                        break;
+                    case "transferWater":
+                        calculatedVolume -= event.getVolume();
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
+
+        return calculatedVolume == tank.getCurrentVolume();
+    }
     public static Tank findTankWithMostWaterFilled(List<Tank> tanks) {
         Tank tankWithMostWaterFilled = tanks.get(0);
         for (Tank tank : tanks) {
@@ -137,4 +172,5 @@ abstract class Tank  {
         }
         return emptyTanks;
     }
+
 }

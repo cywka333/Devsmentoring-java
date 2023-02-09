@@ -18,6 +18,10 @@ public class Event {
         this.isOperationSuccessful = isOperationSuccessful;
     }
 
+    public double getVolume() {
+        return volume;
+    }
+
     public String getOperationType() {
         return operationType;
     }

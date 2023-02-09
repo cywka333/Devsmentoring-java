@@ -45,7 +45,8 @@ public class Main {
                 System.out.println("Empty tanks: " + findEmptyTanks(tanks));
 
 
-                System.out.println("Tank with most operations of pouring water " + mostOperationsOfGivenType("pourWater").getName());
-                System.out.println("Tank with most failed operations: " + countFailedOperations());
+                System.out.println("Most operations of pouring water " + mostOperationsOfGivenType("pourWater").getName());
+                System.out.println("Most failed operations: " + countFailedOperations().toString());
+                System.out.println("Comparing to event list the water level is: " + checkState("Cuboid 1"));
         }
 }
