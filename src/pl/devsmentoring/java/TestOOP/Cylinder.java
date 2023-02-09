@@ -9,7 +9,6 @@ class Cylinder extends Tank{
         this.radius = radius;
         this.height = height;
     }
-
 }
 
 

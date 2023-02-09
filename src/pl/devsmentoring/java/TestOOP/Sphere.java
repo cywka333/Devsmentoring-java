@@ -7,6 +7,4 @@ class Sphere extends Tank {
         super(name, (4.0 / 3.0) * Math.PI * Math.pow(radius, 3));
         this.radius = radius;
     }
-
 }
-

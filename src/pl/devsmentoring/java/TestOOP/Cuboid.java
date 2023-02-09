@@ -11,6 +11,5 @@ class Cuboid extends Tank {
         this.width = width;
         this.height = height;
     }
-
 }
 
