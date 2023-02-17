@@ -7,12 +7,8 @@ public class Department {
 
     private String name;
 
-    private List<Course> courses = new ArrayList<>();
+    private final List<Course> courses;
 
-    public Department(String name, List<Course> courses) {
-        this.name = name;
-        this.courses = courses;
-    }
 
     public Department(String name) {
         this.name = name;

@@ -5,23 +5,16 @@ import java.util.List;
 
 class University {
 
-    private String name;
-    private List<Department> departments = new ArrayList<>();
+    private final String name;
+    private final List<Department> departments;
 
     public University(String name) {
         this.name = name;
         this.departments = new ArrayList<>();
     }
 
-    public University(String name, List<Department> departments) {
-        this.name = name;
-        this.departments = departments;
-    }
-
-
-    public University addDepartment(Department department) {
+    public void addDepartment(Department department) {
         this.departments.add(department);
-        return this;
     }
     public String getName() {
         return name;
