@@ -18,7 +18,7 @@ public class Exercise4 {
             System.out.println(number);
         }
 
-        System.out.println("\n Positive numbers!");
+        System.out.println("\nPositive numbers!");
         randomNumbers.stream()
                      .filter(positiveNumber -> positiveNumber % 2 == 0)
                      .filter(positiveNumber -> positiveNumber > 0)

@@ -13,7 +13,7 @@ public class Exercise5 {
         basicList.stream()
                  .map(x -> x*x)
                  .collect(Collectors.toList())
-                .forEach(System.out::println);
+                 .forEach(System.out::println);
 
     }
 }

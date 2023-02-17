@@ -6,8 +6,6 @@ import java.util.stream.Stream;
 public class Exercise8 {
     public static void main(String[] args) {
 
-        //Stwórz strumień, który będzie w nieskończoność generował i wyświetlał trzycyfrowe liczby parzyste.
-
         Random rand = new Random();
         Stream.generate(() -> {
                     int number = rand.nextInt(900) + 100;
