@@ -25,4 +25,5 @@ class LoopServiceExercise05Test {
         // then
         Assertions.assertEquals(actualList, expectedList);
     }
+
 }
