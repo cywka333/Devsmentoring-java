@@ -3,6 +3,7 @@ pl\devsmentoring\java\Module5\Exercise11.class
 pl\devsmentoring\java\Module9\Exercise9\Motorcycle.class
 pl\devsmentoring\java\Module4\Exercise04\Main.class
 pl\devsmentoring\java\Module9\Exercise5\Stock.class
+pl\devsmentoring\java\CelciusConverter\Main.class
 pl\devsmentoring\java\Module7\Exercise09\Suit.class
 pl\devsmentoring\java\Module3\Exercise07.class
 pl\devsmentoring\java\Module7\Exercise09\Deck.class
@@ -66,12 +67,15 @@ pl\devsmentoring\java\Module9\Exercise2\TramDepot.class
 pl\devsmentoring\java\Module8\Exercise4\Tram.class
 pl\devsmentoring\java\Module9\Exercise2\Tram.class
 pl\devsmentoring\java\Module4\Exercise06\Main.class
+pl\devsmentoring\java\CelciusConverter\ConverterService.class
 pl\devsmentoring\java\Module4\Exercise13\Exercise13.class
 pl\devsmentoring\java\Module8\Exercise4\Vehicle.class
 pl\devsmentoring\java\Module3\Exercise03.class
 pl\devsmentoring\java\Module7\Exercise12\Manager.class
 pl\devsmentoring\java\Module7\Exercise12\Order.class
+pl\devsmentoring\java\StringReverse\Main.class
 pl\devsmentoring\java\Module9\Exercise2\Depot.class
+pl\devsmentoring\java\StringReverse\ReverseService.class
 pl\devsmentoring\java\Module8\Exercise8\Warning.class
 pl\devsmentoring\java\Module4\Exercise05\Exercise05.class
 pl\devsmentoring\java\Module7\Exercise12\Main.class
