@@ -1,6 +1,13 @@
 out/
 .idea/
 .idea_modules/
+target/
 *.iml
 *.ipr
 *.iws
+*.lst
+pom.xml.tag
+pom.xml.releaseBackup
+release.properties
+dependency-reduced-pom.xml
+
